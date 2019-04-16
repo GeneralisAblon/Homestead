@@ -1,21 +1,22 @@
 <html>
 <head>
-<title>Produtos - echo="$produto->titulo" </title>
+<title>Produtos - {{$produtos[1]->titulo}}</title>
 
 </head>
 <body>
-    
-    <h1>Produtos - echo="$produto->titulo" </h1>
+    @foreach($produtos as $p)
+    <h1>Produtos - {{$p->titulo}} </h1>
      <ul>
 
 
-        <li><strong>SKU: </strong> echo="$produto->titulo" </li>
-        <li><strong>Preço: </strong> echo="$produto->preco"  </li>
-        <li><strong>Adicionado em: </strong> echo="$produto->create_at"  </li>
+        <li><strong>SKU: </strong> {{$p->titulo}} </li>
+        <li><strong>Preço: </strong> {{$p->preco}}  </li>
+        <li><strong>Adicionado em: </strong> {{$p->create_at}}  </li>
 
      </ul>
      
-    <p><?php echo '$produto->descricao'?></p>
+    <p>{{$p->descricao}}</p>
+    @endforeach
     <a href="javascript:history.go(-1)">Voltar</a>
 </body>
 
