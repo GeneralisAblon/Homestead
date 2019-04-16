@@ -8,4 +8,3 @@ class Produtos extends Model
 {
     //
 }
-s
