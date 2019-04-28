@@ -9,7 +9,9 @@
             <li><strong>Adicionado em:  </strong>{{$produto->create_at}}</li>            
             <ul>
             
-            <p>{{$produto->descricao}}</p>
+            <p>
+            {{$produto->descricao}}
+            </p>
             <a href="javascript:history.go(-1)">Voltar</a>
  @endsection
 

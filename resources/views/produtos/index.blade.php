@@ -4,7 +4,7 @@
     <h1>Produtos</h1>
         <ul>
         @foreach($produtos as $produtoapelido)
-        <li><a href="/produtos/{{$produtoapelido->id}}">{{$produtoapelido->titulo}}</a></li>
+        <li><a href="{{ URL::to('produtos')}}/{{$produtoapelido->id}}">{{$produtoapelido->titulo}}</a></li>
         @endforeach
         </ul>
 @endsection
