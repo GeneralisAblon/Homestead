@@ -5,10 +5,11 @@
 </head>
 
 <body>
+     
     <h1>Produtos</h1>
         <ul>
-        @foreach($produtos as $produto)
-        <li><a href="/produtos/{{$produto->id}}">{{$produto->titulo}}</a></li>
+        @foreach($produtos as $produtoapelido)
+        <li><a href="/produtos/{{$produtoapelido->id}}">{{$produtoapelido->titulo}}</a></li>
         @endforeach
         </ul>
 

@@ -2,7 +2,7 @@
 <head>
 
 <meta charset="UFT-8">
-<title>Contato</title>
+<title>{{$titulo}}</title>
 </head>
 
 
@@ -10,7 +10,8 @@
 
 <?php
 
-echo $titulo;
+echo $corpo;
+
 
 ?>
 
