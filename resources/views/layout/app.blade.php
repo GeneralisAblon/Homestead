@@ -12,7 +12,7 @@
     <div class="container">
          @yield('content')
     </div>
-    <script type="text/javascript" scr="{{ URL::to( 'js/jquery.min.js' )}}"></script>
+    <script type="text/javascript" scr="{{ URL::to( 'js/jquery.min.js' ) }}"></script>
     <script type="text/javascript" scr="{{ URL::to( 'dist/js/bootstrap.min.js' ) }}"></script>
 
 
