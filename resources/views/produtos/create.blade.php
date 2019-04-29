@@ -5,7 +5,7 @@
     <h1 class="mb-3">Adicionar um novo Produto</h1>
     @if($message = Session::get('success'))
 
-        <div class='alert alert success'>
+        <div class='alert alert-success'>
             {{$message}}        
         </div>
 
