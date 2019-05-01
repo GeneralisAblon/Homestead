@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 //batatababaca
 use Illuminate\Http\Request;
 use App\Produtos;
+use Validator;
+
+
 class ProdutosController extends Controller
 {
      
@@ -32,6 +35,13 @@ class ProdutosController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, 
+        [
+            'sku' => 'required|unique:produtos|min:3',
+            'título' => 'required|min:3',
+            'descricao' => 'required|min:10',
+            'preco' => 'required|numeric',
+        ]);
 
         $produto = new Produtos();
         $produto->sku = $request->input('sku');
@@ -43,6 +53,14 @@ class ProdutosController extends Controller
         {
             return redirect('produtos/create')->with('success', 'Produto cadastrado com sucesso!!!');
         }
+        
+    }
+
+    public function edit ($id)
+    {
+
+        $produtocontroller = Produtos::find($id);
+        return view('produtos.edit',compact('produto','id'));
 
     }
 

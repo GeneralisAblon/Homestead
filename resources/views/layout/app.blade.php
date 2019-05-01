@@ -5,7 +5,7 @@
 
     <title>Nosso Site - @yield('title')</title>
     <link rel="stylesheet" type="text/css" href="{{ URL::to('dist/css/bootstrap.min.css' ) }}">
-
+    
 </head>
 
 <body>

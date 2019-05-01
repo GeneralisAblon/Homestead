@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title', 'Adicionar um produto')
+@section('title', 'Adicionar um produto'.$produto->titulo)
 @section('content')     
     
     <h1 class="mb-3">Adicionar um novo Produto</h1>
