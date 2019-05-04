@@ -12,14 +12,10 @@
     @endif
 	@if(count($errors)>0)
 		<div class="alert alert-danger">
-			<ul>
-			Erro na validação 
-			<?php
-			// Não está funcionando
-			// @foreach($errors->all() as error)
-			// <li>{{$error}}</li>
-			// @endforeach
-			?>
+			<ul>		
+			@foreach($errors->all() as $error)
+			<li>{{$error}}</li>
+			@endforeach						
 			</ul>
 		</div>
 	@endif
