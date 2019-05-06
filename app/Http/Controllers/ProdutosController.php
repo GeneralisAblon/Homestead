@@ -11,14 +11,14 @@ class ProdutosController extends Controller
 {     
     public function show ($id)
     {
-        $produtocontroller = Produtos::find($id);
-        return view('produtos.show', array('produto' => $produtocontroller));
+        $produto = Produtos::find($id);
+        return view('produtos.show', array('produto' => $produto));
     }
 
     public function index()
     {
-        $produtoscontroller = Produtos::all();
-        return view('produtos.index', array('produtos' => $produtoscontroller));
+        $produtos = Produtos::paginate(8);
+        return view('produtos.index', array('produtos' => $produtos, 'buscar' => null));
     }
 
     public function create()
@@ -55,7 +55,6 @@ class ProdutosController extends Controller
         return view('produtos.edit',compact('produto','id'));
     }
 
-
     public function update(Request $request, $id)
     {
         $produto = Produtos::find($id);
@@ -87,5 +86,26 @@ class ProdutosController extends Controller
         
     }
 
+    public function destroy($id)
+    {   
+        $produto = Produtos::find($id);
+        $produto->delete();
+        if(file_exists("./img/produtos/".md5($id).".jpg"))
+        {
+            unlink("./img/produtos/".md5($id).".jpg");
+        }    
+        return redirect()->back()->with('success', 'Produto deletado com sucesso!!!');
+    }
+
+    public function busca(Request $request)
+    {
+        $buscaInput = $request->input('busca');
+        $produtos = Produtos::where('titulo','LIKE','%'.$buscaInput.'%')
+            ->orwhere('descricao','LIKE','%'.$buscaInput.'%')
+            ->paginate(8);
+
+        return view('produtos.index',array('produtos' => $produtos, 'buscar' => $buscaInput));
+
+    }
 
 }

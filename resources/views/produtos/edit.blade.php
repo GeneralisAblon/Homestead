@@ -4,11 +4,9 @@
     
     <h1 class="mb-3">Editar o produto {{$produto->titulo}}</h1>
     @if($message = Session::get('success'))
-
         <div class='alert alert-success'>
             {{$message}}        
         </div>
-
     @endif
 	@if(count($errors)>0)
 		<div class="alert alert-danger">
