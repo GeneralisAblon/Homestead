@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('title', 'Lista de Produtos')
-@section('content')       
+@section('content')
     <h1>Produtos</h1>
         <ul>
         @foreach($produtos as $produtoapelido)
@@ -9,4 +9,3 @@
         </ul>
         <a href="/produtos/create" class="btn btn-primary">Cadastrar produto</a>
 @endsection
-   

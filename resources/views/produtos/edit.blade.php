@@ -43,11 +43,10 @@
 	 	</div>
 		 <div class="input-group mb-3">
 			<label for="imgproduto">Imagem</label>
-			<input type="file" class="form-control-file" id="imgproduto" name="imgproduto">
-		 
+			<input type="file" class="form-control-file" id="imgproduto" name="imgproduto">		 
 		 </div>
 	 	<button type="submit" class="btn btn-primary">Atualizar produto</button>
-		 <a class="btn btn-primary" href="/produtos">Voltar</a>
+		 <a class="btn btn-primary" href="/produtos/{{$produto->id}}/">Voltar</a>
 	</form>
 
 

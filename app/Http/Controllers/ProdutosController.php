@@ -8,29 +8,22 @@ use Validator;
 
 
 class ProdutosController extends Controller
-{
-     
+{     
     public function show ($id)
     {
-
         $produtocontroller = Produtos::find($id);
         return view('produtos.show', array('produto' => $produtocontroller));
-
     }
 
     public function index()
     {
         $produtoscontroller = Produtos::all();
         return view('produtos.index', array('produtos' => $produtoscontroller));
-
-
     }
 
     public function create()
     {
-
         return view('produtos.create');
-
     }
 
     public function store(Request $request)
@@ -58,10 +51,8 @@ class ProdutosController extends Controller
 
     public function edit ($id)
     {
-
         $produto = Produtos::find($id);
         return view('produtos.edit',compact('produto','id'));
-
     }
 
 
@@ -85,8 +76,8 @@ class ProdutosController extends Controller
         {
 
             $imagem = $request->file('imgproduto');
-            $nomearquivo = md5($id).".".$imagem->getClientOriginalExtension();
-            
+            $nomearquivo = md5($id).".".$imagem->getClientOriginalExtension();           
+           $request->file('imgproduto')->move(public_path('./img/produtos/'), $nomearquivo);
         }
 
         if($produto->save ())
