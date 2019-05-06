@@ -81,6 +81,14 @@ class ProdutosController extends Controller
         $produto->descricao = $request->get('descricao');
         $produto->preco = $request->get('preco');
 
+        if($request->hasfile('imgproduto'))
+        {
+
+            $imagem = $request->file('imgproduto');
+            $nomearquivo = md5($id).".".$imagem->getClientOriginalExtension();
+            
+        }
+
         if($produto->save ())
         {
             return redirect('produtos/'.$id.'/edit')->with('success', 'Produto atualizado com sucesso!!!');

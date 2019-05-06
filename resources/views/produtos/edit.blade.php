@@ -19,7 +19,7 @@
 			</ul>
 		</div>
 	@endif
-	<form method="POST" action="{{action('ProdutosController@update',$id)}}">
+	<form method="POST" enctype="multipart/form-data" action="{{action('ProdutosController@update',$id)}}">
     @csrf
 	<input type="hidden" name="_method" value="PATCH">
 		<div class="form-group mb-3">
@@ -41,6 +41,11 @@
 			</div>
 		    <input type="number" step=".01" class="form-control" id="preco" name="preco" value="{{$produto->preco}}" placeholder="0,00" required>
 	 	</div>
+		 <div class="input-group mb-3">
+			<label for="imgproduto">Imagem</label>
+			<input type="file" class="form-control-file" id="imgproduto" name="imgproduto">
+		 
+		 </div>
 	 	<button type="submit" class="btn btn-primary">Atualizar produto</button>
 		 <a class="btn btn-primary" href="/produtos">Voltar</a>
 	</form>
