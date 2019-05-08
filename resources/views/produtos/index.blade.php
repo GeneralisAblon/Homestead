@@ -65,7 +65,9 @@
         @endforeach
         </div>
         <br>
+        @if(Auth::check()) 
         <a href="/produtos/create" class="btn btn-primary">Cadastrar produto</a>
+        @endif
         <br>
         <br>
     {{$produtos->links()}}
