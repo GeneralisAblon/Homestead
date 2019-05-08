@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-//batatababaca
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Produtos;
 use Validator;

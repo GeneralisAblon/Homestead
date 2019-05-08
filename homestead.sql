@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 09-Abr-2019 às 01:34
+-- Generation Time: 08-Maio-2019 às 00:39
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.2.14
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `homestead`
 --
-CREATE DATABASE IF NOT EXISTS `homestead` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `homestead`;
 
 -- --------------------------------------------------------
 
@@ -61,6 +59,13 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Extraindo dados da tabela `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('teste@teste.com', '$2y$10$YzZXL9aya7NMRVLN.29IeOcha2zd6b6B.gwmIhmJVz6s.V1vD2zXa', '2019-05-08 03:23:19');
+
 -- --------------------------------------------------------
 
 --
@@ -77,16 +82,22 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
 INSERT INTO `produtos` (`id`, `sku`, `titulo`, `descricao`, `preco`, `created_at`, `updated_at`) VALUES
-(1, 'p001', 'Produto1', 'Descricao teste', 11.50, NULL, NULL),
-(2, 'p002', 'Produto2', 'Descricao teste 2', 99.00, NULL, NULL),
-(3, 'p003', 'Produto3', 'Descricao teste 3', 50.00, NULL, NULL);
+(14, 'p004', 'Produto 4', 'Descrição teste 4', 4.00, '2019-05-08 03:05:04', '2019-05-08 03:05:04'),
+(13, 'p002', 'Produto 2', 'Descrição teste 2', 2.00, '2019-05-08 03:04:22', '2019-05-08 03:04:22'),
+(12, 'p001', 'Produto 1', 'Descrição teste 1', 1.00, '2019-05-08 03:03:59', '2019-05-08 03:03:59'),
+(11, 'p007', 'Produto 7', 'Descrição teste 7', 7.00, '2019-05-08 03:03:32', '2019-05-08 03:03:32'),
+(6, 'p005', 'Produto 6', 'Descrição teste 6', 155.00, '2019-04-28 22:15:49', '2019-04-28 22:15:49'),
+(7, 'p009', 'Produto 9', 'Descrição teste 9', 9.00, '2019-04-28 22:21:12', '2019-04-28 22:21:12'),
+(8, 'p010', 'Produto 10', 'Descrição teste 10', 100.00, '2019-04-28 22:22:57', '2019-04-28 22:22:57'),
+(9, 'p011', 'Produto 11', 'Descrição teste 11', 11.00, '2019-04-30 01:21:25', '2019-04-30 01:21:25'),
+(10, 'p008', 'Produto 8', 'Descrição teste 8', 8.00, '2019-05-04 17:49:40', '2019-05-04 17:49:40');
 
 -- --------------------------------------------------------
 
@@ -106,7 +117,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Augusto', 'teste@teste.com', NULL, '$2y$10$Q5qCECcU1c6IRoOnhzJ4queuZ2BSHUxjDsjwrT2.Y5xFalE514JFm', NULL, '2019-05-08 03:22:42', '2019-05-08 03:22:42');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

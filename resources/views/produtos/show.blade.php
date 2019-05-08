@@ -18,6 +18,8 @@
             <ul>
 	     </div>
     </div>
+    @if(Auth::check()) 
          <a class="btn btn-primary" href="/produtos/{{$produto->id}}/edit">Atualizar</a>
+    @endif
          <a class="btn btn-primary" href="/produtos/">Voltar</a>		 
  @endsection
