@@ -46,6 +46,7 @@
 	 	<button type="submit" class="btn btn-primary">Atualizar produto</button>
 		 <a class="btn btn-primary" href="/produtos/{{$produto->id}}/">Voltar</a>
 	</form>
+/*salvando*/
 
 
 
